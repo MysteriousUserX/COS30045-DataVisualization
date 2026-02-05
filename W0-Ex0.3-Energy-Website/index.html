@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Smart Buyer's Guide to TV Energy Consumption in Australia - Interactive data visualizations"
+    />
+    <title>PowerSmart - TV Energy Guide</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a
+          href="#"
+          class="logo"
+          onclick="
+            showPage('home');
+            return false;
+          "
+        >
+          <img src="images/PowerIcon.png" alt="PowerSmart Logo" />
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a
+              href="#"
+              id="nav-home"
+              class="nav-link active"
+              onclick="
+                showPage('home');
+                return false;
+              "
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="nav-televisions"
+              class="nav-link"
+              onclick="
+                showPage('televisions');
+                return false;
+              "
+              >Smart Buyer's Guide</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="nav-about"
+              class="nav-link"
+              onclick="
+                showPage('about');
+                return false;
+              "
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home Page -->
+      <section id="page-home" class="page active">
+        <h1>Welcome to PowerSmart</h1>
+        <p class="intro">
+          Your data-driven guide to making smart TV purchasing decisions in
+          Australia. Explore energy consumption patterns and find the perfect
+          balance between screen size, technology, and power efficiency.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number" id="total-models">4,160+</span>
+            <span class="stat-label">TV Models Analyzed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="total-brands">70+</span>
+            <span class="stat-label">Brands Compared</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">55-65"</span>
+            <span class="stat-label">Most Popular Size Range</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">LCD</span>
+            <span class="stat-label">Most Efficient Technology</span>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <h2>Why This Data Matters</h2>
+          <p>
+            Choosing a new TV involves more than just picking the largest screen
+            you can afford. With rising electricity costs, understanding energy
+            consumption can save you hundreds of dollars over your TV's
+            lifetime. Our analysis of over 4,000 TV models reveals surprising
+            patterns about size, technology, and power usage.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>What You'll Discover</h2>
+          <ul>
+            <li>
+              <strong>Screen Size Trends:</strong> See which sizes dominate the
+              Australian market
+            </li>
+            <li>
+              <strong>Technology Comparison:</strong> LCD vs OLED - the energy
+              truth
+            </li>
+            <li>
+              <strong>Hidden Costs:</strong> How screen size directly impacts
+              your power bill
+            </li>
+            <li>
+              <strong>Brand Analysis:</strong> Which manufacturers offer the
+              most choices
+            </li>
+          </ul>
+          <p style="margin-top: 20px">
+            <a
+              href="#"
+              onclick="
+                showPage('televisions');
+                return false;
+              "
+              style="color: #e9c46a; font-weight: bold"
+            >
+              → Explore the Smart Buyer's Guide
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Televisions Page - Data Story -->
+      <section id="page-televisions" class="page">
+        <h1>Smart Buyer's Guide</h1>
+        <p class="intro">
+          Navigate the TV market with confidence. Our data-driven insights help
+          you understand what matters most when choosing your next television.
+        </p>
+
+        <!-- Scene 1: Market Landscape -->
+        <div class="story-scene">
+          <span class="scene-number">01</span>
+          <h2>The Market Landscape</h2>
+          <p>
+            Before diving into specifications, let's understand what's actually
+            available in the Australian market. Screen size is often the first
+            decision buyers make, and the data reveals clear preferences.
+          </p>
+          <div class="scene-insight">
+            💡 Key Insight: 55" and 65" TVs are the new standard. Smaller
+            screens are becoming niche products.
+          </div>
+          <div class="chart-container" id="chart-sizes">
+            <p style="color: #a8dadc">Loading chart...</p>
+          </div>
+          <p style="margin-top: 20px; color: #a8dadc">
+            The data shows a clear shift toward larger screens. If you're still
+            considering a 32" or 40" TV, you may find fewer options as
+            manufacturers focus on bigger displays.
+          </p>
+        </div>
+
+        <!-- Scene 2: Technology Choice -->
+        <div class="story-scene">
+          <span class="scene-number">02</span>
+          <h2>The Technology Choice</h2>
+          <p>
+            LCD (LED-backlit) technology dominates the market, but OLED offers
+            premium picture quality. What does the energy data tell us about
+            these choices?
+          </p>
+          <div class="scene-insight">
+            💡 Key Insight: LCD technology makes up over 95% of the market,
+            offering the most variety and generally better energy efficiency.
+          </div>
+          <div class="chart-container" id="chart-tech">
+            <p style="color: #a8dadc">Loading chart...</p>
+          </div>
+          <p style="margin-top: 20px; color: #a8dadc">
+            While OLED TVs offer stunning picture quality with perfect blacks,
+            they come with higher energy consumption. LCD remains the practical
+            choice for most buyers.
+          </p>
+        </div>
+
+        <!-- Scene 3: Hidden Cost -->
+        <div class="story-scene">
+          <span class="scene-number">03</span>
+          <h2>The Hidden Cost</h2>
+          <p>
+            Here's what the salesperson might not tell you: there's a strong
+            correlation between screen size and power consumption. That dream
+            85" TV comes with a significant ongoing electricity cost.
+          </p>
+          <div class="scene-insight">
+            ⚠️ Warning: Moving from a 55" to an 85" TV can more than double your
+            energy consumption!
+          </div>
+          <div class="chart-container" id="chart-power">
+            <p style="color: #a8dadc">Loading chart...</p>
+          </div>
+          <p style="margin-top: 20px; color: #a8dadc">
+            Each dot represents a TV model. Notice how power consumption
+            increases sharply with screen size. OLED models (orange) tend to
+            cluster higher than LCD equivalents.
+          </p>
+        </div>
+
+        <!-- Scene 4: Brand Leaders -->
+        <div class="story-scene">
+          <span class="scene-number">04</span>
+          <h2>The Major Players</h2>
+          <p>
+            Who are the market leaders? The number of registered models
+            indicates which brands offer the widest selection for Australian
+            consumers.
+          </p>
+          <div class="scene-insight">
+            💡 Key Insight: Kogan, Samsung, and Hisense lead with the most model
+            variety, giving consumers more choices across different price
+            points.
+          </div>
+          <div class="chart-container" id="chart-brands">
+            <p style="color: #a8dadc">Loading chart...</p>
+          </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="verdict-box">
+          <h2>The Verdict</h2>
+          <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px">
+            Based on our analysis of 4,160+ TV models, here are our
+            recommendations for different buyer priorities:
+          </p>
+          <div class="recommendation">
+            <div class="rec-card best-value">
+              <h3>🏆 Best for Energy Efficiency</h3>
+              <p>
+                Choose an <strong>LCD (LED) TV</strong> in the
+                <strong>55" range</strong>. You'll get a modern, popular screen
+                size while keeping power consumption reasonable.
+              </p>
+            </div>
+            <div class="rec-card premium">
+              <h3>✨ Premium Experience</h3>
+              <p>
+                Go for <strong>OLED</strong> if picture quality is your
+                priority, but be prepared for higher energy costs. Consider
+                55-65" to balance quality with efficiency.
+              </p>
+            </div>
+            <div class="rec-card">
+              <h3>💰 Budget Conscious</h3>
+              <p>
+                Stick to
+                <strong>major brands like Samsung, LG, or Hisense</strong> for
+                reliable options. Their wide range means competitive pricing
+                across all sizes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Page -->
+      <section id="page-about" class="page">
+        <h1>About This Project</h1>
+        <p class="intro">
+          Understanding the data behind Australian TV energy consumption.
+        </p>
+
+        <div class="content-box">
+          <h2>Our Mission</h2>
+          <p>
+            PowerSmart helps Australian households make informed decisions about
+            TV purchases by presenting energy consumption data in an accessible,
+            visual format. We believe that understanding the true cost of
+            ownership empowers better consumer choices.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>About the Data</h2>
+          <p>
+            <strong>Source:</strong> Australian Energy Rating database -
+            official government data on registered television energy consumption
+            ratings.
+          </p>
+          <p>
+            <strong>Processing:</strong> Data was cleaned and analyzed using
+            KNIME to extract meaningful patterns and insights.
+          </p>
+          <p>
+            <strong>Scope:</strong> 4,160+ TV models from 70+ brands, covering
+            various screen sizes (19" to 116") and technologies (LCD, OLED).
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>Data Ethics & Privacy</h2>
+          <p>
+            <strong>Privacy:</strong> No personal data is collected. All data
+            relates to product specifications only.
+          </p>
+          <p>
+            <strong>Accuracy:</strong> Energy figures reflect standardized
+            testing conditions. Real-world usage may vary based on settings and
+            content.
+          </p>
+          <p>
+            <strong>Ethics:</strong> Data is presented objectively without brand
+            bias. Visualizations are designed to inform, not mislead.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>AI Declaration</h2>
+          <p>
+            <strong>GenAI tools used:</strong> Claude (Anthropic) assisted with
+            code generation for HTML, CSS, and JavaScript (D3.js charts). All
+            AI-generated code was reviewed and tested for accuracy.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 Tam Nguyen | COS30045 Data Visualisation | GenAI (Claude)
+        was used to assist with code generation
+      </p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/charts.js"></script>
+  </body>
+</html>
