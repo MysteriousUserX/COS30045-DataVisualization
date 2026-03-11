@@ -1,0 +1,173 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fdf6e3;
+  color: #5c4a3d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #8b7355;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fdf6e3;
+  padding: 15px 20px;
+  display: block;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: #e8a84c;
+  color: #5c4a3d;
+}
+
+.nav-link.active {
+  background-color: #f5c56d;
+  color: #5c4a3d;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+h1 {
+  color: #8b7355;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  border-bottom: 3px solid #e8a84c;
+  padding-bottom: 10px;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #7a6455;
+  margin-bottom: 30px;
+}
+
+.content-box {
+  background-color: #ffffff;
+  border: 2px solid #c9b896;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-box h2 {
+  color: #e8a84c;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.content-box p {
+  margin-bottom: 10px;
+}
+
+.content-box ul {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.content-box li {
+  margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: #8b7355;
+  color: #fdf6e3;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
