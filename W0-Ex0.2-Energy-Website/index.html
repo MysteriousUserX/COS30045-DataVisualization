@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Australian Appliance Energy Consumption Information"
+    />
+    <title>PowerSmart - Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a
+          href="#"
+          class="logo"
+          onclick="
+            showPage('home');
+            return false;
+          "
+        >
+          <img src="images/PowerIcon.png" alt="PowerSmart Logo" />
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a
+              href="#"
+              id="nav-home"
+              class="nav-link active"
+              onclick="
+                showPage('home');
+                return false;
+              "
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="nav-televisions"
+              class="nav-link"
+              onclick="
+                showPage('televisions');
+                return false;
+              "
+              >Televisions</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="nav-about"
+              class="nav-link"
+              onclick="
+                showPage('about');
+                return false;
+              "
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home Page -->
+      <section id="page-home" class="page active">
+        <h1>Welcome to PowerSmart</h1>
+        <p class="intro">
+          Your guide to understanding appliance energy consumption in Australia.
+        </p>
+
+        <div class="content-box">
+          <h2>Why Energy Efficiency Matters</h2>
+          <p>
+            In Australia, household appliances account for approximately 33% of
+            total residential electricity use. Understanding how much energy
+            your appliances consume can help you make informed decisions that
+            benefit both your wallet and the environment.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>Energy Rating Labels</h2>
+          <p>
+            The Australian Government's Energy Rating Label helps consumers
+            compare the energy efficiency of household appliances. The more
+            stars, the more efficient the appliance. Look for the Energy Rating
+            Label when purchasing new appliances to ensure you're making an
+            energy-smart choice.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>Average Household Energy Use</h2>
+          <p>
+            The average Australian household uses around 18 kilowatt-hours (kWh)
+            of electricity per day. Major contributors include heating and
+            cooling (40%), water heating (21%), and appliances including
+            refrigerators and televisions (33%).
+          </p>
+        </div>
+      </section>
+
+      <!-- Televisions Page -->
+      <section id="page-televisions" class="page">
+        <h1>Television Energy Consumption</h1>
+        <p class="intro">
+          Learn about energy usage patterns for televisions in Australian
+          households.
+        </p>
+
+        <div class="content-box">
+          <h2>TV Energy Facts</h2>
+          <p>
+            Televisions are one of the most commonly used appliances in
+            Australian homes. The average TV is used for about 6 hours per day,
+            and accounts for around 5-10% of household electricity consumption.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>Types of TVs and Energy Use</h2>
+          <p>
+            <strong>LED TVs:</strong> Most energy efficient, using 50-100 watts
+            for a 50-inch screen.
+          </p>
+          <p>
+            <strong>OLED TVs:</strong> Moderate energy use, around 80-150 watts
+            for similar sizes.
+          </p>
+          <p>
+            <strong>Older Plasma/LCD:</strong> Higher consumption, potentially
+            150-300 watts.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>Energy Saving Tips</h2>
+          <ul>
+            <li>Reduce screen brightness to lower energy consumption</li>
+            <li>Enable power-saving mode if available</li>
+            <li>
+              Turn off the TV completely rather than leaving it on standby
+            </li>
+            <li>Consider screen size - larger screens use more energy</li>
+            <li>Look for TVs with high Energy Star ratings when purchasing</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- About Us Page -->
+      <section id="page-about" class="page">
+        <h1>About Us</h1>
+        <p class="intro">
+          Learn more about our mission to promote energy awareness in Australia.
+        </p>
+
+        <div class="content-box">
+          <h2>Our Mission</h2>
+          <p>
+            PowerSmart is dedicated to helping Australian households understand
+            and reduce their energy consumption. We provide accessible
+            information about appliance energy use to empower consumers to make
+            environmentally responsible choices.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>Why We Exist</h2>
+          <p>
+            With rising energy costs and growing environmental concerns,
+            understanding household energy consumption has never been more
+            important. We aim to bridge the gap between complex energy data and
+            everyday consumer decisions.
+          </p>
+        </div>
+
+        <div class="content-box">
+          <h2>Data Sources</h2>
+          <p>
+            Our information is compiled from various Australian government
+            sources including the Department of Climate Change, Energy, the
+            Environment and Water, as well as the Energy Rating initiative
+            managed by state and territory governments.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 Tam Nguyen | GenAI (Claude) was used to assist with code
+        generation
+      </p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
