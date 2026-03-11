@@ -372,104 +372,89 @@
         stroke-linejoin="round"
       />
 
-      <!-- ===== WINDOWS (rects - new addition) ===== -->
-      <!-- Left window -->
-      <rect
-        x="215"
-        y="180"
-        width="40"
-        height="35"
-        fill="#b3e5fc"
-        stroke="#5d4037"
-        stroke-width="2"
-        rx="2"
-      />
-      <line
-        x1="235"
-        y1="180"
-        x2="235"
-        y2="215"
-        stroke="#5d4037"
-        stroke-width="1.5"
-      />
-      <line
-        x1="215"
-        y1="197"
-        x2="255"
-        y2="197"
-        stroke="#5d4037"
-        stroke-width="1.5"
-      />
-      <!-- Left window shutters -->
-      <rect
-        x="207"
-        y="178"
-        width="8"
-        height="39"
-        fill="#1b5e20"
-        stroke="#0d4710"
-        stroke-width="1"
-        rx="1"
-      />
-      <rect
-        x="255"
-        y="178"
-        width="8"
-        height="39"
-        fill="#1b5e20"
-        stroke="#0d4710"
-        stroke-width="1"
-        rx="1"
-      />
+      <!-- ===== WINDOWS (grouped with <g> for identical styling) ===== -->
+      <!-- Parent group applies shared stroke color to all window elements -->
+      <g stroke="#5d4037">
+        <!-- Left window: positioned using transform="translate(215, 180)" -->
+        <g transform="translate(215, 180)">
+          <!-- Glass pane (40x35, relative to 0,0) -->
+          <rect
+            x="0"
+            y="0"
+            width="40"
+            height="35"
+            fill="#b3e5fc"
+            stroke-width="2"
+            rx="2"
+          />
+          <!-- Vertical cross-bar -->
+          <line x1="20" y1="0" x2="20" y2="35" stroke-width="1.5" />
+          <!-- Horizontal cross-bar -->
+          <line x1="0" y1="17" x2="40" y2="17" stroke-width="1.5" />
+          <!-- Left shutter -->
+          <rect
+            x="-8"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+          <!-- Right shutter -->
+          <rect
+            x="40"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+        </g>
 
-      <!-- Right window -->
-      <rect
-        x="305"
-        y="180"
-        width="40"
-        height="35"
-        fill="#b3e5fc"
-        stroke="#5d4037"
-        stroke-width="2"
-        rx="2"
-      />
-      <line
-        x1="325"
-        y1="180"
-        x2="325"
-        y2="215"
-        stroke="#5d4037"
-        stroke-width="1.5"
-      />
-      <line
-        x1="305"
-        y1="197"
-        x2="345"
-        y2="197"
-        stroke="#5d4037"
-        stroke-width="1.5"
-      />
-      <!-- Right window shutters -->
-      <rect
-        x="297"
-        y="178"
-        width="8"
-        height="39"
-        fill="#1b5e20"
-        stroke="#0d4710"
-        stroke-width="1"
-        rx="1"
-      />
-      <rect
-        x="345"
-        y="178"
-        width="8"
-        height="39"
-        fill="#1b5e20"
-        stroke="#0d4710"
-        stroke-width="1"
-        rx="1"
-      />
+        <!-- Right window: positioned using transform="translate(305, 180)" -->
+        <g transform="translate(305, 180)">
+          <!-- Glass pane (40x35, relative to 0,0) -->
+          <rect
+            x="0"
+            y="0"
+            width="40"
+            height="35"
+            fill="#b3e5fc"
+            stroke-width="2"
+            rx="2"
+          />
+          <!-- Vertical cross-bar -->
+          <line x1="20" y1="0" x2="20" y2="35" stroke-width="1.5" />
+          <!-- Horizontal cross-bar -->
+          <line x1="0" y1="17" x2="40" y2="17" stroke-width="1.5" />
+          <!-- Left shutter -->
+          <rect
+            x="-8"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+          <!-- Right shutter -->
+          <rect
+            x="40"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+        </g>
+      </g>
 
       <!-- ===== DOOR (rect - enhanced) ===== -->
       <rect
