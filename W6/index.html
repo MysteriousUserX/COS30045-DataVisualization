@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Energy Consumption Histogram</title>
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/visualisations.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <h1>TV Energy Consumption</h1>
+            <p class="subtitle">Interactive visualization of screen technology energy usage.</p>
+        </div>
+        
+        <div class="filter-group">
+            <span class="filter-label">Screen Tech:</span>
+            <div id="filters_screen" class="controls">
+                <!-- Tech buttons injected here by populateFilters() -->
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <span class="filter-label">Screen Size:</span>
+            <div id="filters_size" class="controls">
+                <!-- Size buttons injected here by populateFilters() -->
+            </div>
+        </div>
+
+        <div id="histogram" class="responsive-svg-container"></div>
+    </div>
+
+    <!-- JS Scripts (Order matters) -->
+    <script src="js/shared-constants.js"></script>
+    <script src="js/histogram.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/load-data.js"></script>
+</body>
+</html>
