@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Australia Energy Dashboard 2024</h1>
+        <p>An interactive exploration of energy consumption rates for various TV sizes and overall spot power prices throughout the years.</p>
+    </header>
+
+    <div class="dashboard-grid">
+        <section class="chart-card">
+            <div class="card-header">
+                <h2>TV Energy Consumption vs Star Rating</h2>
+                <p>Exploring the correlation between star rating and overall power usage.</p>
+            </div>
+            <div class="chart-container" id="scatter-chart"></div>
+        </section>
+
+        <section class="chart-card">
+            <div class="card-header">
+                <h2>Energy Usage by Screen Tech (All Sizes)</h2>
+                <p>Average labelled energy consumption (kWh/year) for LCD, LED, and OLED displays across all models.</p>
+            </div>
+            <div class="chart-container" id="donut-chart"></div>
+        </section>
+
+        <section class="chart-card">
+            <div class="card-header">
+                <h2>Energy Usage by Screen Tech (55-inch models)</h2>
+                <p>Comparing average power usage strictly for 55-inch models to observe technology differences.</p>
+            </div>
+            <div class="chart-container" id="bar-chart"></div>
+        </section>
+
+        <section class="chart-card">
+            <div class="card-header">
+                <h2>Spot Power Prices (1998 - 2024)</h2>
+                <p>Tracking the average spot market electricity price across Australian states.</p>
+            </div>
+            <div class="chart-container" id="line-chart"></div>
+        </section>
+    </div>
+
+    <!-- Tooltip Element -->
+    <div id="tooltip" class="tooltip" style="opacity: 0;"></div>
+
+    <!-- Chart Scripts -->
+    <script src="js/scatter.js"></script>
+    <script src="js/donut.js"></script>
+    <script src="js/bar.js"></script>
+    <script src="js/line.js"></script>
+</body>
+</html>

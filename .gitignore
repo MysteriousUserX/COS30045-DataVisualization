@@ -1,0 +1,11 @@
+# Ignore original zip and Mac metadata
+Ex5.zip
+__MACOSX/
+
+# Ignore Python specific files (like the local server we ran)
+__pycache__/
+*.pyc
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db

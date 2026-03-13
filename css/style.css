@@ -1,0 +1,232 @@
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --border-color: #30363d;
+    --accent-color: #58a6ff;
+    
+    /* Chart Colors */
+    --color-primary: #58a6ff;
+    --color-secondary: #3fb950;
+    --color-tertiary: #a371f7;
+    --color-quaternary: #ff7b72;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #58a6ff, #a371f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.chart-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.card-header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.chart-container {
+    flex-grow: 1;
+    min-height: 350px; /* Base height to ensure charts have space */
+    position: relative;
+    width: 100%;
+}
+
+/* SVG styling */
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: var(--border-color);
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    fill: var(--text-secondary);
+}
+
+.axis-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    fill: var(--text-primary);
+}
+
+.grid-line {
+    stroke: var(--border-color);
+    stroke-opacity: 0.3;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    background: rgba(22, 27, 34, 0.95);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    transition: opacity 0.15s ease;
+}
+
+.tooltip p {
+    margin: 0.25rem 0;
+}
+
+.tooltip-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem !important;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.25rem;
+    color: var(--color-primary);
+}
+
+/* Specific chart shape styles */
+.dot {
+    opacity: 0.7;
+    transition: opacity 0.2s ease, r 0.2s ease;
+}
+
+.dot:hover {
+    opacity: 1;
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+.bar {
+    transition: opacity 0.2s ease;
+}
+
+.bar:hover {
+    opacity: 0.8;
+}
+
+.arc path {
+    stroke: var(--card-bg);
+    stroke-width: 2px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.arc path:hover {
+    opacity: 0.85;
+}
+
+.line {
+    fill: none;
+    stroke-width: 2.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chart-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.chart-card:nth-child(1) { animation-delay: 0.1s; }
+.chart-card:nth-child(2) { animation-delay: 0.2s; }
+.chart-card:nth-child(3) { animation-delay: 0.3s; }
+.chart-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .chart-container {
+        min-height: 300px;
+    }
+}
