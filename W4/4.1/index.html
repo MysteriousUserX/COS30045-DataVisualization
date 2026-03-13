@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 4.1 - House and Garden SVG</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+        padding: 20px;
+        background-color: #f5f0e8;
+      }
+      h1 {
+        color: #4a3728;
+      }
+      h2 {
+        color: #5a4738;
+      }
+      /* Gives the SVG container a visible border and rounded corners */
+      svg {
+        border: 3px solid #5a4738;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exercise 4.1: My House and Garden</h1>
+
+    <svg width="600" height="400">
+      <!-- ===== DEFINITIONS: Gradients ===== -->
+      <defs>
+        <!-- Sky gradient -->
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#87CEEB" />
+          <stop offset="100%" stop-color="#e0f7fa" />
+        </linearGradient>
+        <!-- Sun glow -->
+        <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff9c4" />
+          <stop offset="60%" stop-color="#ffd54f" />
+          <stop offset="100%" stop-color="#ff8f00" />
+        </radialGradient>
+        <!-- Grass gradient -->
+        <linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#66bb6a" />
+          <stop offset="100%" stop-color="#2e7d32" />
+        </linearGradient>
+        <!-- Wall texture gradient -->
+        <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ffe0b2" />
+          <stop offset="100%" stop-color="#ffcc80" />
+        </linearGradient>
+        <!-- Door gradient -->
+        <linearGradient id="doorGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#795548" />
+          <stop offset="100%" stop-color="#5d4037" />
+        </linearGradient>
+      </defs>
+
+      <!-- ===== SKY BACKGROUND ===== -->
+      <rect x="0" y="0" width="600" height="400" fill="url(#skyGrad)" />
+
+      <!-- ===== TITLE TEXT ===== -->
+      <text
+        x="20"
+        y="28"
+        font-size="18"
+        fill="#1a237e"
+        font-weight="bold"
+        font-family="'Segoe UI', sans-serif"
+        letter-spacing="1"
+      >
+        My House and Garden
+      </text>
+
+      <!-- ===== SUN with rays ===== -->
+      <circle cx="510" cy="60" r="44" fill="url(#sunGlow)" opacity="0.9" />
+      <!-- Sun rays (lines radiating outward) -->
+      <line
+        x1="510"
+        y1="5"
+        x2="510"
+        y2="20"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <line
+        x1="510"
+        y1="100"
+        x2="510"
+        y2="115"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <line
+        x1="455"
+        y1="60"
+        x2="440"
+        y2="60"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <line
+        x1="565"
+        y1="60"
+        x2="580"
+        y2="60"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <line
+        x1="472"
+        y1="22"
+        x2="462"
+        y2="12"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <line
+        x1="548"
+        y1="22"
+        x2="558"
+        y2="12"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <line
+        x1="472"
+        y1="98"
+        x2="462"
+        y2="108"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <line
+        x1="548"
+        y1="98"
+        x2="558"
+        y2="108"
+        stroke="#ffd54f"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+
+      <!-- ===== CLOUDS (ellipses - moved & restyled) ===== -->
+      <ellipse cx="120" cy="55" rx="55" ry="22" fill="white" opacity="0.85" />
+      <ellipse cx="155" cy="48" rx="40" ry="18" fill="white" opacity="0.85" />
+      <ellipse cx="85" cy="50" rx="30" ry="16" fill="white" opacity="0.75" />
+      <!-- Second cloud cluster -->
+      <ellipse cx="370" cy="40" rx="48" ry="18" fill="white" opacity="0.8" />
+      <ellipse cx="400" cy="35" rx="35" ry="14" fill="white" opacity="0.8" />
+
+      <!-- ===== BIRDS (paths) ===== -->
+      <path
+        d="M 420 90 Q 425 82 430 90"
+        fill="none"
+        stroke="#333"
+        stroke-width="1.5"
+      />
+      <path
+        d="M 432 88 Q 437 80 442 88"
+        fill="none"
+        stroke="#333"
+        stroke-width="1.5"
+      />
+      <path
+        d="M 340 70 Q 344 63 348 70"
+        fill="none"
+        stroke="#555"
+        stroke-width="1.2"
+      />
+      <path
+        d="M 350 68 Q 354 61 358 68"
+        fill="none"
+        stroke="#555"
+        stroke-width="1.2"
+      />
+
+      <!-- ===== GREEN HILL / GROUND (path - reshaped) ===== -->
+      <path
+        d="M 0 350 Q 150 260 300 300 Q 450 340 600 290 L 600 400 L 0 400 Z"
+        fill="url(#grassGrad)"
+        stroke="#388e3c"
+        stroke-width="1"
+      />
+
+      <!-- ===== GARDEN PATH (polyline - curved stone path) ===== -->
+      <path
+        d="M 280 300 Q 310 320 290 345 Q 270 370 300 400"
+        fill="none"
+        stroke="#d7ccc8"
+        stroke-width="22"
+        stroke-linecap="round"
+      />
+      <!-- Path stone lines -->
+      <line
+        x1="275"
+        y1="310"
+        x2="298"
+        y2="312"
+        stroke="#bcaaa4"
+        stroke-width="1.5"
+      />
+      <line
+        x1="283"
+        y1="330"
+        x2="303"
+        y2="328"
+        stroke="#bcaaa4"
+        stroke-width="1.5"
+      />
+      <line
+        x1="272"
+        y1="350"
+        x2="295"
+        y2="348"
+        stroke="#bcaaa4"
+        stroke-width="1.5"
+      />
+      <line
+        x1="280"
+        y1="370"
+        x2="305"
+        y2="368"
+        stroke="#bcaaa4"
+        stroke-width="1.5"
+      />
+
+      <!-- ===== PICKET FENCE (rects + lines) ===== -->
+      <!-- Horizontal rails -->
+      <line
+        x1="390"
+        y1="310"
+        x2="580"
+        y2="310"
+        stroke="#f5f5dc"
+        stroke-width="4"
+      />
+      <line
+        x1="390"
+        y1="335"
+        x2="580"
+        y2="335"
+        stroke="#f5f5dc"
+        stroke-width="4"
+      />
+      <!-- Fence pickets -->
+      <rect
+        x="395"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+      <rect
+        x="420"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+      <rect
+        x="445"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+      <rect
+        x="470"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+      <rect
+        x="495"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+      <rect
+        x="520"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+      <rect
+        x="545"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+      <rect
+        x="570"
+        y="290"
+        width="8"
+        height="60"
+        rx="2"
+        fill="#f5f5dc"
+        stroke="#ddd5b5"
+        stroke-width="1"
+      />
+
+      <!-- ===== HOUSE BODY (rect - new fill gradient + stroke) ===== -->
+      <rect
+        x="195"
+        y="150"
+        width="170"
+        height="150"
+        fill="url(#wallGrad)"
+        stroke="#8d6e63"
+        stroke-width="3"
+        rx="2"
+      />
+
+      <!-- ===== CHIMNEY (rect - new addition) ===== -->
+      <rect
+        x="310"
+        y="85"
+        width="25"
+        height="65"
+        fill="#8d6e63"
+        stroke="#5d4037"
+        stroke-width="2"
+        rx="1"
+      />
+      <!-- Smoke (small circles) -->
+      <circle cx="322" cy="75" r="5" fill="#bdbdbd" opacity="0.5" />
+      <circle cx="318" cy="62" r="7" fill="#bdbdbd" opacity="0.4" />
+      <circle cx="325" cy="48" r="9" fill="#bdbdbd" opacity="0.3" />
+
+      <!-- ===== ROOF (polygon - enhanced) ===== -->
+      <polygon
+        points="175,150 280,65 385,150"
+        fill="#c62828"
+        stroke="#8e0000"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+
+      <!-- ===== WINDOWS (grouped with <g> for identical styling) ===== -->
+      <!-- Parent group applies shared stroke color to all window elements -->
+      <g stroke="#5d4037">
+        <!-- Left window: positioned using transform="translate(215, 180)" -->
+        <g transform="translate(215, 180)">
+          <!-- Glass pane (40x35, relative to 0,0) -->
+          <rect
+            x="0"
+            y="0"
+            width="40"
+            height="35"
+            fill="#b3e5fc"
+            stroke-width="2"
+            rx="2"
+          />
+          <!-- Vertical cross-bar -->
+          <line x1="20" y1="0" x2="20" y2="35" stroke-width="1.5" />
+          <!-- Horizontal cross-bar -->
+          <line x1="0" y1="17" x2="40" y2="17" stroke-width="1.5" />
+          <!-- Left shutter -->
+          <rect
+            x="-8"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+          <!-- Right shutter -->
+          <rect
+            x="40"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+        </g>
+
+        <!-- Right window: positioned using transform="translate(305, 180)" -->
+        <g transform="translate(305, 180)">
+          <!-- Glass pane (40x35, relative to 0,0) -->
+          <rect
+            x="0"
+            y="0"
+            width="40"
+            height="35"
+            fill="#b3e5fc"
+            stroke-width="2"
+            rx="2"
+          />
+          <!-- Vertical cross-bar -->
+          <line x1="20" y1="0" x2="20" y2="35" stroke-width="1.5" />
+          <!-- Horizontal cross-bar -->
+          <line x1="0" y1="17" x2="40" y2="17" stroke-width="1.5" />
+          <!-- Left shutter -->
+          <rect
+            x="-8"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+          <!-- Right shutter -->
+          <rect
+            x="40"
+            y="-2"
+            width="8"
+            height="39"
+            fill="#1b5e20"
+            stroke="#0d4710"
+            stroke-width="1"
+            rx="1"
+          />
+        </g>
+      </g>
+
+      <!-- ===== DOOR (rect - enhanced) ===== -->
+      <rect
+        x="257"
+        y="230"
+        width="46"
+        height="70"
+        fill="url(#doorGrad)"
+        stroke="#3e2723"
+        stroke-width="2"
+        rx="3"
+      />
+      <!-- Door panels -->
+      <rect
+        x="263"
+        y="238"
+        width="34"
+        height="22"
+        rx="2"
+        fill="none"
+        stroke="#6d4c41"
+        stroke-width="1"
+      />
+      <rect
+        x="263"
+        y="268"
+        width="34"
+        height="22"
+        rx="2"
+        fill="none"
+        stroke="#6d4c41"
+        stroke-width="1"
+      />
+      <!-- Doorknob -->
+      <circle
+        cx="293"
+        cy="270"
+        r="4"
+        fill="#ffd54f"
+        stroke="#f9a825"
+        stroke-width="1"
+      />
+
+      <!-- ===== TREE (line + circles - enhanced) ===== -->
+      <!-- Tree trunk -->
+      <rect
+        x="88"
+        y="250"
+        width="24"
+        height="100"
+        fill="#6d4c41"
+        stroke="#4e342e"
+        stroke-width="2"
+        rx="3"
+      />
+      <!-- Tree foliage (layered circles for depth) -->
+      <circle
+        cx="100"
+        cy="235"
+        r="48"
+        fill="#388e3c"
+        stroke="#2e7d32"
+        stroke-width="2"
+      />
+      <circle cx="75" cy="245" r="30" fill="#43a047" />
+      <circle cx="125" cy="245" r="30" fill="#43a047" />
+      <circle cx="100" cy="215" r="28" fill="#4caf50" />
+
+      <!-- ===== FLOWER GARDEN (circles + lines - new addition) ===== -->
+      <!-- Flower 1 (red) -->
+      <line
+        x1="150"
+        y1="340"
+        x2="150"
+        y2="310"
+        stroke="#558b2f"
+        stroke-width="2"
+      />
+      <circle
+        cx="150"
+        cy="305"
+        r="7"
+        fill="#e53935"
+        stroke="#b71c1c"
+        stroke-width="1"
+      />
+      <circle cx="150" cy="305" r="3" fill="#ffeb3b" />
+      <!-- Flower 2 (pink) -->
+      <line
+        x1="170"
+        y1="345"
+        x2="170"
+        y2="318"
+        stroke="#558b2f"
+        stroke-width="2"
+      />
+      <circle
+        cx="170"
+        cy="313"
+        r="6"
+        fill="#ec407a"
+        stroke="#c2185b"
+        stroke-width="1"
+      />
+      <circle cx="170" cy="313" r="2.5" fill="#fff176" />
+      <!-- Flower 3 (purple) -->
+      <line
+        x1="188"
+        y1="338"
+        x2="188"
+        y2="308"
+        stroke="#558b2f"
+        stroke-width="2"
+      />
+      <circle
+        cx="188"
+        cy="303"
+        r="7"
+        fill="#ab47bc"
+        stroke="#7b1fa2"
+        stroke-width="1"
+      />
+      <circle cx="188" cy="303" r="3" fill="#fff9c4" />
+      <!-- Flower 4 (orange) -->
+      <line
+        x1="40"
+        y1="355"
+        x2="40"
+        y2="330"
+        stroke="#558b2f"
+        stroke-width="2"
+      />
+      <circle
+        cx="40"
+        cy="325"
+        r="6"
+        fill="#ff7043"
+        stroke="#d84315"
+        stroke-width="1"
+      />
+      <circle cx="40" cy="325" r="2.5" fill="#fff176" />
+      <!-- Flower 5 (blue) -->
+      <line
+        x1="60"
+        y1="350"
+        x2="60"
+        y2="322"
+        stroke="#558b2f"
+        stroke-width="2"
+      />
+      <circle
+        cx="60"
+        cy="317"
+        r="7"
+        fill="#42a5f5"
+        stroke="#1565c0"
+        stroke-width="1"
+      />
+      <circle cx="60" cy="317" r="3" fill="#fff9c4" />
+
+      <!-- ===== STEPPING STONES on path ===== -->
+      <ellipse
+        cx="285"
+        cy="305"
+        rx="8"
+        ry="5"
+        fill="#a1887f"
+        stroke="#8d6e63"
+        stroke-width="1"
+      />
+      <ellipse
+        cx="295"
+        cy="325"
+        rx="8"
+        ry="5"
+        fill="#a1887f"
+        stroke="#8d6e63"
+        stroke-width="1"
+      />
+      <ellipse
+        cx="282"
+        cy="348"
+        rx="8"
+        ry="5"
+        fill="#a1887f"
+        stroke="#8d6e63"
+        stroke-width="1"
+      />
+      <ellipse
+        cx="290"
+        cy="370"
+        rx="8"
+        ry="5"
+        fill="#a1887f"
+        stroke="#8d6e63"
+        stroke-width="1"
+      />
+    </svg>
+
+    <h2>Annotated SVG Coordinates</h2>
+    <p>
+      The image below shows how the SVG coordinate system works. The origin
+      (0,0) is at the top-left corner. The x-axis increases to the right and the
+      y-axis increases downward.
+    </p>
+    <img
+      src="annotated-svg.png"
+      alt="Annotated SVG showing shape coordinates"
+      style="max-width: 100%; border: 2px solid #333"
+    />
+
+    <h2>SVG DOM in Browser Developer Tools</h2>
+    <p>
+      The screenshot below shows the SVG house and garden alongside the
+      browser's Developer Tools (Elements panel), revealing the DOM structure of
+      the SVG elements including <code>&lt;defs&gt;</code>,
+      <code>&lt;g&gt;</code>, <code>&lt;rect&gt;</code>,
+      <code>&lt;circle&gt;</code>, <code>&lt;polygon&gt;</code>,
+      <code>&lt;line&gt;</code>, and other SVG nodes.
+    </p>
+    <img
+      src="image.png"
+      alt="Screenshot of SVG DOM in browser Developer Tools"
+      style="max-width: 100%; border: 2px solid #333"
+    />
+
+    <hr style="margin: 40px 0; border: 1px solid #ccc" />
+
+    <h2>AI Declaration</h2>
+    <p>
+      This exercise was completed primarily by the student.
+      <strong>Gemini AI (Google)</strong>
+      was used as a supportive tool to assist with the following aspects:
+    </p>
+    <ul
+      style="
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+      "
+    >
+      <li>
+        Suggesting SVG shape attributes and colour values during customisation
+      </li>
+      <li>
+        Providing guidance on SVG gradient syntax
+        (<code>&lt;linearGradient&gt;</code>,
+        <code>&lt;radialGradient&gt;</code>)
+      </li>
+      <li>
+        Advising on <code>&lt;g&gt;</code> group element structure and
+        <code>transform="translate()"</code> usage
+      </li>
+      <li>Assisting with code formatting and Git commands</li>
+    </ul>
+    <p
+      style="
+        text-align: left;
+        max-width: 600px;
+        margin: 10px auto 0;
+        line-height: 1.8;
+      "
+    >
+      All design decisions, layout planning, and final implementation were
+      carried out by the student. AI was used as a reference and coding
+      assistant, not as the primary author.
+    </p>
+    <p style="margin-top: 20px; font-size: 14px; color: #777">
+      &copy; 2026 COS30045 Data Visualisation — Week 4, Exercise 4.1
+    </p>
+  </body>
+</html>

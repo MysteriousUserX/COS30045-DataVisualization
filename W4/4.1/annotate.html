@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annotated SVG - House and Garden</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+      }
+      svg {
+        border: 2px solid #333;
+        background-color: #e0f7fa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Annotated SVG Coordinates</h1>
+
+    <svg width="600" height="400">
+      <!-- ===== ORIGINAL DRAWING ===== -->
+
+      <!-- Text -->
+      <text x="20" y="30" font-size="20" fill="darkblue">
+        My House and Garden
+      </text>
+
+      <!-- Path (Garden Hill) -->
+      <path d="M 0 400 Q 300 200 600 400 Z" fill="forestgreen" />
+
+      <!-- Circle (Sun) -->
+      <circle cx="500" cy="60" r="40" fill="gold" />
+
+      <!-- Ellipses (Clouds) -->
+      <ellipse cx="150" cy="70" rx="50" ry="20" fill="white" />
+      <ellipse cx="180" cy="80" rx="40" ry="25" fill="white" />
+
+      <!-- Rect (House Body) -->
+      <rect
+        x="200"
+        y="150"
+        width="160"
+        height="150"
+        fill="navajowhite"
+        stroke="saddlebrown"
+        stroke-width="2"
+      />
+
+      <!-- Door -->
+      <rect x="260" y="230" width="40" height="70" fill="saddlebrown" />
+      <!-- Doorknob -->
+      <circle cx="290" cy="270" r="4" fill="gold" />
+
+      <!-- Polygon (Roof) -->
+      <polygon
+        points="180,150 280,70 380,150"
+        fill="firebrick"
+        stroke="darkred"
+        stroke-width="2"
+      />
+
+      <!-- Line (Tree Trunk) -->
+      <line
+        x1="100"
+        y1="350"
+        x2="100"
+        y2="250"
+        stroke="sienna"
+        stroke-width="15"
+      />
+
+      <!-- Tree Top -->
+      <circle cx="100" cy="230" r="45" fill="mediumseagreen" />
+
+      <!-- Polyline (Walkway) -->
+      <polyline
+        points="280,300 320,330 290,360 330,400"
+        fill="none"
+        stroke="tan"
+        stroke-width="20"
+      />
+
+      <!-- ===== ANNOTATIONS ===== -->
+      <!-- Annotation styles: red dots, red dashed lines, red text labels -->
+
+      <!-- ── 1. <rect> (House) ── -->
+      <!-- Dot at top-left corner -->
+      <circle cx="200" cy="150" r="5" fill="red" />
+      <!-- Label for top-left corner -->
+      <text x="130" y="143" font-size="11" fill="red" font-weight="bold">
+        (x=200, y=150)
+      </text>
+      <!-- Arrow showing width -->
+      <line
+        x1="200"
+        y1="160"
+        x2="360"
+        y2="160"
+        stroke="red"
+        stroke-width="1.5"
+        stroke-dasharray="4,3"
+        marker-end="url(#arrowhead)"
+      />
+      <text x="245" y="175" font-size="11" fill="red" font-weight="bold">
+        width=160
+      </text>
+      <!-- Arrow showing height -->
+      <line
+        x1="210"
+        y1="150"
+        x2="210"
+        y2="300"
+        stroke="red"
+        stroke-width="1.5"
+        stroke-dasharray="4,3"
+        marker-end="url(#arrowhead)"
+      />
+      <text
+        x="214"
+        y="230"
+        font-size="11"
+        fill="red"
+        font-weight="bold"
+        transform="rotate(90, 214, 230)"
+      >
+        height=150
+      </text>
+      <!-- Shape label -->
+      <text x="200" y="320" font-size="12" fill="red" font-weight="bold">
+        &lt;rect&gt;
+      </text>
+
+      <!-- ── 2. <circle> (Sun) ── -->
+      <!-- Dot at center -->
+      <circle cx="500" cy="60" r="4" fill="red" />
+      <!-- Label for center -->
+      <text x="510" y="45" font-size="11" fill="red" font-weight="bold">
+        (cx=500, cy=60)
+      </text>
+      <!-- Radius line -->
+      <line
+        x1="500"
+        y1="60"
+        x2="540"
+        y2="60"
+        stroke="red"
+        stroke-width="1.5"
+        stroke-dasharray="4,3"
+      />
+      <text x="505" y="55" font-size="11" fill="red" font-weight="bold">
+        r=40
+      </text>
+      <!-- Shape label -->
+      <text x="540" y="75" font-size="12" fill="red" font-weight="bold">
+        &lt;circle&gt;
+      </text>
+
+      <!-- ── 3. <line> (Tree Trunk) ── -->
+      <!-- Dot at bottom -->
+      <circle cx="100" cy="350" r="4" fill="red" />
+      <text x="10" y="365" font-size="11" fill="red" font-weight="bold">
+        (x1=100, y1=350)
+      </text>
+      <!-- Dot at top -->
+      <circle cx="100" cy="250" r="4" fill="red" />
+      <text x="10" y="248" font-size="11" fill="red" font-weight="bold">
+        (x2=100, y2=250)
+      </text>
+      <!-- Connecting dashed line -->
+      <line
+        x1="100"
+        y1="250"
+        x2="100"
+        y2="350"
+        stroke="red"
+        stroke-width="1.5"
+        stroke-dasharray="4,3"
+      />
+      <!-- Shape label -->
+      <text x="55" y="310" font-size="12" fill="red" font-weight="bold">
+        &lt;line&gt;
+      </text>
+
+      <!-- ── 4. <polygon> (Roof) ── -->
+      <!-- Three corner dots and labels -->
+      <circle cx="180" cy="150" r="4" fill="red" />
+      <text x="135" y="167" font-size="10" fill="red" font-weight="bold">
+        (180,150)
+      </text>
+
+      <circle cx="280" cy="70" r="4" fill="red" />
+      <text x="282" y="65" font-size="10" fill="red" font-weight="bold">
+        (280,70)
+      </text>
+
+      <circle cx="380" cy="150" r="4" fill="red" />
+      <text x="383" y="145" font-size="10" fill="red" font-weight="bold">
+        (380,150)
+      </text>
+      <!-- Shape label -->
+      <text x="255" y="125" font-size="12" fill="red" font-weight="bold">
+        &lt;polygon&gt;
+      </text>
+
+      <!-- ── 5. <text> ── -->
+      <!-- Dot at text anchor -->
+      <circle cx="20" cy="30" r="4" fill="red" />
+      <text x="22" y="47" font-size="11" fill="red" font-weight="bold">
+        (x=20, y=30) &lt;text&gt;
+      </text>
+
+      <!-- ── 6. <ellipse> (Cloud) ── -->
+      <!-- Dot at center of first ellipse -->
+      <circle cx="150" cy="70" r="4" fill="red" />
+      <text x="155" y="98" font-size="10" fill="red" font-weight="bold">
+        (cx=150, cy=70)
+      </text>
+      <!-- rx line -->
+      <line
+        x1="150"
+        y1="70"
+        x2="200"
+        y2="70"
+        stroke="red"
+        stroke-width="1.5"
+        stroke-dasharray="4,3"
+      />
+      <text x="165" y="67" font-size="10" fill="red" font-weight="bold">
+        rx=50
+      </text>
+      <!-- ry line -->
+      <line
+        x1="150"
+        y1="70"
+        x2="150"
+        y2="90"
+        stroke="red"
+        stroke-width="1.5"
+        stroke-dasharray="4,3"
+      />
+      <text x="130" y="88" font-size="10" fill="red" font-weight="bold">
+        ry=20
+      </text>
+      <!-- Shape label -->
+      <text x="200" y="78" font-size="12" fill="red" font-weight="bold">
+        &lt;ellipse&gt;
+      </text>
+
+      <!-- ── 7. <path> (Garden Hill) ── -->
+      <!-- Start point -->
+      <circle cx="0" cy="400" r="4" fill="red" />
+      <text x="5" y="395" font-size="10" fill="red" font-weight="bold">
+        M(0,400)
+      </text>
+      <!-- Control point -->
+      <circle cx="300" cy="200" r="4" fill="red" />
+      <text x="305" y="198" font-size="10" fill="red" font-weight="bold">
+        Q(300,200)
+      </text>
+      <!-- End point -->
+      <circle cx="600" cy="400" r="4" fill="red" />
+      <text x="510" y="395" font-size="10" fill="red" font-weight="bold">
+        (600,400)
+      </text>
+      <!-- Dashed lines to control point -->
+      <line
+        x1="0"
+        y1="400"
+        x2="300"
+        y2="200"
+        stroke="red"
+        stroke-width="1"
+        stroke-dasharray="4,3"
+        opacity="0.5"
+      />
+      <line
+        x1="300"
+        y1="200"
+        x2="600"
+        y2="400"
+        stroke="red"
+        stroke-width="1"
+        stroke-dasharray="4,3"
+        opacity="0.5"
+      />
+      <!-- Shape label -->
+      <text x="300" y="215" font-size="12" fill="red" font-weight="bold">
+        &lt;path&gt;
+      </text>
+
+      <!-- ── 8. <polyline> (Walkway) ── -->
+      <!-- Vertex dots and labels -->
+      <circle cx="280" cy="300" r="4" fill="red" />
+      <text x="238" y="295" font-size="9" fill="red" font-weight="bold">
+        (280,300)
+      </text>
+
+      <circle cx="320" cy="330" r="4" fill="red" />
+      <text x="328" y="328" font-size="9" fill="red" font-weight="bold">
+        (320,330)
+      </text>
+
+      <circle cx="290" cy="360" r="4" fill="red" />
+      <text x="238" y="358" font-size="9" fill="red" font-weight="bold">
+        (290,360)
+      </text>
+
+      <circle cx="330" cy="400" r="4" fill="red" />
+      <text x="338" y="398" font-size="9" fill="red" font-weight="bold">
+        (330,400)
+      </text>
+      <!-- Shape label -->
+      <text x="340" y="360" font-size="12" fill="red" font-weight="bold">
+        &lt;polyline&gt;
+      </text>
+
+      <!-- Arrowhead marker definition -->
+      <defs>
+        <marker
+          id="arrowhead"
+          markerWidth="10"
+          markerHeight="7"
+          refX="10"
+          refY="3.5"
+          orient="auto"
+        >
+          <polygon points="0 0, 10 3.5, 0 7" fill="red" />
+        </marker>
+      </defs>
+    </svg>
+  </body>
+</html>
